@@ -9,7 +9,7 @@ A simple command line image manipulator for PNM images.
 + Top-Bottom Concatenation
 + Two Image Blender
 
-## To Change Filters Applied:
+## To Change Which Filters Are Applied:
 1. Initialize filter in the `main()` function in main.C
 
   ```
