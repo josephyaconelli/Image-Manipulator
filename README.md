@@ -11,14 +11,18 @@ A simple command line image manipulator for PNM images.
 
 ## To Change Filters Applied:
 1. Initialize filter in the `main()` function in main.C
+
   ```
   FilterName filter;
   ```
 2. Set input(s) to the previous filter's output:
+
   ```
   filter.SetInput(prevFilter.GetOutput());
   ```
-  or for filter's requiring two inputs:
+  
+  or for filters requiring two inputs:
+  
   ```
   filter.SetInput(prevFilter1.GetOutput());
   filter.SetInput2(preFilter2.GetOutput());
