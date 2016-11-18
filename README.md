@@ -9,7 +9,7 @@ A simple command line image manipulator for PNM images.
 + Top-Bottom Concatenation
 + Two Image Blender
 
-## To Change Which Filters Are Applied:
+## Add Filter:
 1. Initialize filter in the `main()` function in main.C
 
   ```
@@ -36,3 +36,29 @@ A simple command line image manipulator for PNM images.
     ```
     filter.GetOutput()->Update();
     ``` 
+
+## Create Filter:
+1. Declare new filter in `filters.h` and extend `public Filter`:
+
+  ```
+  class MyFilter : public Filter
+  {
+    public:
+      virtual void Execute();
+      /* any other methods you'll need... */
+  };
+  ```
+2. Implement `MyFilter::Execute()` in `filters.C`:
+
+  ```
+  void
+  MyFilter::Execute()
+  {
+    /* filter implementation */
+  }
+  
+  /* implement any other methods you'll need...*/
+  ```
+  ####NOTE: you can use indP(i, j, width) to access the pixel at i,j
+  
+3. Add `MyFilter` to `main.C` using the steps under __Add Filter__
